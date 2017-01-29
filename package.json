@@ -9,6 +9,8 @@
   "author": "LeChristopher J. Blackwell <CodeBlackwell@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "babel-preset-react": "6.22.0",
+    "babel-register": "6.22.0",
     "express": "4.14.1",
     "react": "15.4.2",
     "react-dom": "15.4.2"
