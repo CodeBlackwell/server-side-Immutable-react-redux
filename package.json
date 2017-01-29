@@ -1,0 +1,16 @@
+{
+  "name": "serverside-react-express",
+  "version": "1.0.0",
+  "description": "Basic app for learning serverside rendering",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "LeChristopher J. Blackwell <CodeBlackwell@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "express": "4.14.1",
+    "react": "15.4.2",
+    "react-dom": "15.4.2"
+  }
+}

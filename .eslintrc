@@ -1,0 +1,12 @@
+{
+    "rules": {
+        "comma-dangle": [2,"always"],
+        "no-extra-semi": 2,
+        "semi-spacing": [2,{"before":true,"after":true}],
+        "semi": [2,"never"],
+        "sort-vars": [2,{"ignoreCase":true}],
+        "space-after-keywords": [2,"always"],
+        "arrow-spacing": [2,{"before":true,"after":true}],
+        "object-shorthand": [2,"always"]
+    }
+}
