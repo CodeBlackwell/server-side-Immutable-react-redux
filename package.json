@@ -9,10 +9,13 @@
   "author": "LeChristopher J. Blackwell <CodeBlackwell@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "babel-core": "6.22.1",
+    "babel-loader": "6.2.10",
     "babel-preset-react": "6.22.0",
     "babel-register": "6.22.0",
     "express": "4.14.1",
     "react": "15.4.2",
-    "react-dom": "15.4.2"
+    "react-dom": "15.4.2",
+    "webpack": "1.14.0"
   }
 }
