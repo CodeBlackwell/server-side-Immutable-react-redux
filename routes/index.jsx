@@ -16,7 +16,6 @@ router.get('*', function (request, response) {
             var html = ReactDOMServer.renderToString(
                 <Context { ...renderProps }
                     createElement={ function (Component, renderProps) {
-                        {/*this syntax evaluates to { ...renderProps, ...props }*/}
                        return <Component { ...renderProps } custom={ props }/>
                     } }
                 />
