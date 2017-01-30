@@ -17,7 +17,7 @@ router.get('*', function (request, response) {
                 <Context { ...renderProps }
                     createElement={ function (Component, renderProps) {
                         {/*this syntax evaluates to { ...renderProps, ...props }*/}
-                       return <Component { ...renderProps } { ...props }/>
+                       return <Component { ...renderProps } custom={ props }/>
                     } }
                 />
             )

@@ -1,8 +1,11 @@
 var React = require('react')
+var Link = require('react-router').Link
 
 module.exports = React.createClass({
+    displayName: 'Layout',
     render () {
-        const { title } = this.props
+        const { custom } = this.props
+        const { title } = custom
         return (
             <html>
                 <head>
@@ -14,8 +17,17 @@ module.exports = React.createClass({
                         <h1>{ title }</h1>
                         <p>server side rendering baby</p>
                         <button onClick={ this._handleClick }>Press me for proof!</button>
+                        { this.props.children }
+                        <ul>
+                            <li>
+                                <Link to="/">Home</Link>
+                            </li>
+                            <li>
+                                <Link to="about">About</Link>
+                            </li>
+                        </ul>
                     </div>
-                    <script dangerouslySetInnerHTML={ {__html: 'window.PROPS=' + JSON.stringify(this.props)} }/>
+                    <script dangerouslySetInnerHTML={ {__html: 'window.PROPS=' + JSON.stringify(custom)} }/>
                     <script src="/bundle.js" />
                 </body>
             </html>
