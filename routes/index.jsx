@@ -2,23 +2,27 @@ var router         = require('express').Router()
 var React          = require('react')
 var ReactDOMServer = require('react-dom/server')
 var ReactRouter    = require('react-router')
+var Redux          = require('redux')
+var Provider       = require('react-redux').Provider
 
-var Context        = ReactRouter.RouterContext
+var Context = ReactRouter.RouterContext
+
+function reducer(state) { return state }
 
 router.get('*', function (request, response) {
-    var props = { title: 'Isomorphic/Universal React' }
+    var initialState = { title: 'Isomorphic/Universal React' }
+    var store = Redux.createStore(reducer, initialState)
+
     ReactRouter.match({
-        routes: require('./routes.jsx'),
+        routes:   require('./routes.jsx'),
         location: request.url
     }, function (error, redirectLocation, renderProps) {
         // if renderProps is defined - that means that the route was matched
         if (renderProps) {
             var html = ReactDOMServer.renderToString(
-                <Context { ...renderProps }
-                    createElement={ function (Component, renderProps) {
-                       return <Component { ...renderProps } custom={ props }/>
-                    } }
-                />
+                <Provider store={ store }>
+                    <Context { ...renderProps }/>
+                </Provider>
             )
             response.send(html)
         }

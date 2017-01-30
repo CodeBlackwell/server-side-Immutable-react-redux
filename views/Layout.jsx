@@ -1,16 +1,17 @@
-var React = require('react')
-var Link = require('react-router').Link
+var React   = require('react')
+var Link    = require('react-router').Link
+var connect = require('react-redux').connect
 
-module.exports = React.createClass({
-    displayName: 'Layout',
+var Layout = React.createClass({
+
     render () {
         const { custom } = this.props
-        const { title } = custom
+        const { title }  = custom
         return (
             <html>
                 <head>
                     <title>{ title }</title>
-                    <link rel="stylesheet" href="/style.css" />
+                    <link rel="stylesheet" href="/style.css"/>
                 </head>
                 <body>
                     <div>
@@ -27,8 +28,8 @@ module.exports = React.createClass({
                             </li>
                         </ul>
                     </div>
-                    <script dangerouslySetInnerHTML={ {__html: 'window.PROPS=' + JSON.stringify(custom)} }/>
-                    <script src="/bundle.js" />
+                    <script dangerouslySetInnerHTML={ { __html: 'window.PROPS=' + JSON.stringify(custom) } }/>
+                    <script src="/bundle.js"/>
                 </body>
             </html>
 
@@ -39,3 +40,9 @@ module.exports = React.createClass({
         alert('Proof!')
     }
 })
+
+const mapStateToProps = function (state) {
+    return { custom: state }
+}
+
+module.exports = connect(mapStateToProps)(Layout)
