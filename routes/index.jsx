@@ -3,20 +3,12 @@ var React          = require('react')
 var ReactDOMServer = require('react-dom/server')
 var ReactRouter    = require('react-router')
 
-var Route          = ReactRouter.Route
-var Router         = ReactRouter.Router
 var Context        = ReactRouter.RouterContext
-var browserHistory = ReactRouter.browserHistory
 
 router.get('*', function (request, response) {
     var props = { title: 'Isomorphic/Universal React' }
     ReactRouter.match({
-        routes:   (
-                      <Router history={ browserHistory }>
-                          <Route path='/' component={ require('../Component.jsx') }>
-                          </Route>
-                      </Router>
-                  ),
+        routes: require('./routes.jsx'),
         location: request.url
     }, function (error, redirectLocation, renderProps) {
         // if renderProps is defined - that means that the route was matched
