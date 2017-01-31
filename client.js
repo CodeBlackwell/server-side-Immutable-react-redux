@@ -3,12 +3,12 @@ var Provider    = require('react-redux').Provider
 var React       = require('react')
 var ReactDOM    = require('react-dom')
 var routes      = require('./routes/routes.jsx')
-var transit     = require('transit-immutable-js')
+var Immutable   = require('immutable')
 
 var createReducer   = require('redux-immutablejs').createReducer
 var combineReducers = require('redux-immutablejs').combineReducers
 
-const initState = window.PROPS ? transit.fromJSON(window.PROPS) : new Map();
+const initState = Immutable.Map(window.PROPS)
 
 var reducer      = createReducer(initState, {})
 var rootReducer  = combineReducers({

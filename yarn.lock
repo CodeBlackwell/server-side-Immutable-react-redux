@@ -749,6 +749,10 @@ find-up@^1.0.0:
     path-exists "^2.0.0"
     pinkie-promise "^2.0.0"
 
+flow-runtime@0.0.6:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/flow-runtime/-/flow-runtime-0.0.6.tgz#570aeab33dca9d2357d137c0b0a2e141b7342410"
+
 for-in@^0.1.5:
   version "0.1.6"
   resolved "https://registry.yarnpkg.com/for-in/-/for-in-0.1.6.tgz#c9f96e89bfad18a545af5ec3ed352a1d9e5b4dc8"
@@ -1602,6 +1606,17 @@ readdirp@^2.0.0:
     readable-stream "^2.0.2"
     set-immediate-shim "^1.0.1"
 
+redux-immutable@3.0.10:
+  version "3.0.10"
+  resolved "https://registry.yarnpkg.com/redux-immutable/-/redux-immutable-3.0.10.tgz#160c9ebfe59cf3f2fd4ee9baf0017cd56fe54649"
+  dependencies:
+    flow-runtime "0.0.6"
+    immutable "^3.8.1"
+
+redux-immutablejs@0.0.8:
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/redux-immutablejs/-/redux-immutablejs-0.0.8.tgz#2c173dac1aaebfb20ec86e076b7e2ce65f487a41"
+
 redux@3.6.0:
   version "3.6.0"
   resolved "https://registry.yarnpkg.com/redux/-/redux-3.6.0.tgz#887c2b3d0b9bd86eca2be70571c27654c19e188d"
@@ -1894,6 +1909,10 @@ tough-cookie@~2.3.0:
 transit-immutable-js@^0.7.0:
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/transit-immutable-js/-/transit-immutable-js-0.7.0.tgz#993e25089b6311ff402140f556276d6d253005d9"
+
+transit-js@0.8.846:
+  version "0.8.846"
+  resolved "https://registry.yarnpkg.com/transit-js/-/transit-js-0.8.846.tgz#76e06e8f0e6be27675e3442112f5c9bb75343464"
 
 tty-browserify@0.0.0:
   version "0.0.0"
