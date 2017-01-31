@@ -4,14 +4,24 @@ var ReactDOMServer = require('react-dom/server')
 var ReactRouter    = require('react-router')
 var Redux          = require('redux')
 var Provider       = require('react-redux').Provider
+var Context        = ReactRouter.RouterContext
 
-var Context = ReactRouter.RouterContext
+var Immutable       = require('immutable')
+var createReducer   = require('redux-immutablejs').createReducer
+var combineReducers = require('redux-immutablejs').combineReducers
 
-function reducer(state) { return state }
+var initState = Immutable.fromJS({ application: { title: 'Immutable' } })
+
+var reducer      = createReducer(initState, {})
+var rootReducer  = combineReducers({
+    application: reducer
+})
+var initialState = rootReducer(initState)
+
+var transit = require('transit-immutable-js')
 
 router.get('*', function (request, response) {
-    var initialState = { title: 'Isomorphic/Universal React' }
-    var store = Redux.createStore(reducer, initialState)
+    var store = Redux.createStore(rootReducer, initialState)
 
     ReactRouter.match({
         routes:   require('./routes.jsx'),
@@ -20,7 +30,7 @@ router.get('*', function (request, response) {
         // if renderProps is defined - that means that the route was matched
         if (renderProps) {
             var html = ReactDOMServer.renderToString(
-                <Provider store={ store }>
+                <Provider store={ transit.fromJSON(store) }>
                     <Context { ...renderProps }/>
                 </Provider>
             )

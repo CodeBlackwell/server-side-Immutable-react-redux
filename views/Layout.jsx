@@ -2,11 +2,14 @@ var React   = require('react')
 var Link    = require('react-router').Link
 var connect = require('react-redux').connect
 
+var Immutable = require('immutable')
+var transit   = require('transit-immutable-js')
+
 var Layout = React.createClass({
 
     render () {
-        const { custom } = this.props
-        const { title }  = custom
+        const custom = this.props
+        const title  = custom.application.get('title')
         return (
             <html>
                 <head>
@@ -28,7 +31,8 @@ var Layout = React.createClass({
                             </li>
                         </ul>
                     </div>
-                    <script dangerouslySetInnerHTML={ { __html: 'window.PROPS=' + JSON.stringify(custom) } }/>
+                    {/*@TODO: TRANSIT.JSON PROBABLY GOES HERE*/}
+                    <script dangerouslySetInnerHTML={ { __html: 'window.PROPS=' + transit.toJSON(custom) } }/>
                     <script src="/bundle.js"/>
                 </body>
             </html>
@@ -42,7 +46,8 @@ var Layout = React.createClass({
 })
 
 const mapStateToProps = function (state) {
-    return { custom: state }
+
+    return { application: state.get('application') }
 }
 
 module.exports = connect(mapStateToProps)(Layout)
