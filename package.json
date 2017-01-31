@@ -4,6 +4,7 @@
   "description": "Basic app for learning serverside rendering",
   "main": "index.js",
   "scripts": {
+    "dev": "webpack --progress && nodemon server.js --ext jsx,js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "LeChristopher J. Blackwell <CodeBlackwell@gmail.com>",
