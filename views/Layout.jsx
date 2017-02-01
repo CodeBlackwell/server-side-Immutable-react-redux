@@ -40,7 +40,7 @@ var Layout = React.createClass({
     },
 
     _handleClick () {
-        alert('Proof!')
+        alert('Proof! (That the javascript was loaded as well as the html!)')
     }
 })
 
