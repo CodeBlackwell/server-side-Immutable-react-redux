@@ -3,6 +3,8 @@
 It is meant to be as barebones as possible as not to overcomplicate things, making it hard to adapt for your own uses. Enjoy :)
 
 ## Usage
-`npm run dev`
+`npm install / yarn`
+`webpack -w --progress`
+`nodemon server.js`
 
 ##### Inspired by @RemarkableMark
