@@ -45,7 +45,7 @@ var Layout = React.createClass({
 })
 
 const mapStateToProps = function (state) {
-    const custom = Immutable.Seq(state).toJS()
+    const custom = state.toJS()
     return { custom }
 }
 

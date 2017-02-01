@@ -8,14 +8,13 @@ var Immutable   = require('immutable')
 var createReducer   = require('redux-immutablejs').createReducer
 var combineReducers = require('redux-immutablejs').combineReducers
 
-const initState = Immutable.Map(window.PROPS)
+var initState = Immutable.Map(window.PROPS)
 
 var reducer      = createReducer(initState, {})
 var rootReducer  = combineReducers({
     application: reducer
 })
 var initialState = rootReducer(initState)
-
 var store = createStore(rootReducer, initialState)
 
 ReactDOM.render(
