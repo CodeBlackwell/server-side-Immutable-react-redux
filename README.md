@@ -11,5 +11,3 @@ It is meant to be as barebones as possible as not to overcomplicate things, keep
 in another terminal window
 
 `nodemon server.js`
-
-##### Inspired by @RemarkableMark
